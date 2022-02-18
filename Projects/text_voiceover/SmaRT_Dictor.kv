@@ -1,0 +1,39 @@
+#:kivy 1.10.0
+
+<SmaRTLayout>:
+    id: masta
+    cols: 2
+    rows: 1
+    #orientation: 'vertical'
+
+
+
+    MyButton:
+        id: btn_1
+
+        button_id: btn_1
+
+        text: "Корсары 2"
+        on_state: masta.on_state()
+        group: "a_group"
+
+
+    MyButton:
+        id: btn_2
+
+        button_id: btn_2
+
+        text: "Корсары 3"
+        #on_state: masta.on_state_2()
+        on_release: root.add_new_screen()
+       #on_state: self.value = 'not pressed' if self.state == 'normal' else 'pressed'
+        #on_release: masta.set_opt_2()
+        group: "a_group"
+
+
+<MyNewScreen>:
+
+    Button:
+        text:'Test Button'
+    Label:
+        text:'test Label'
