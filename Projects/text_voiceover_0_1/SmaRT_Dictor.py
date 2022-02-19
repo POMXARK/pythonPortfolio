@@ -99,22 +99,22 @@ class SmaRTLayout(GridLayout):
         self.lbl_2 = "Выбранно : Корсары 2"
 
 
-        for child in [child for child in self.children if child.text == self.lbl_1 or child.text == self.lbl_2]:
+        for child in [child for child in self.children if child._text == self.lbl_1 or child._text == self.lbl_2]:
             if child.state == 'down' or child.state == 'normal':
                 pass
                 #child.text = self.lbl_2
 
 
 
-            for child in [child for child in self.children if child.text == self.lbl_1 ]:
+            for child in [child for child in self.children if child._text == self.lbl_1]:
                 if child.state == 'down':
-                    child.text = self.lbl_2
+                    child._text = self.lbl_2
                     SmaRTLayout.app_start = True # возвращает значение аргументва в класс
 
 
-            for child in [child for child in self.children if child.text == self.lbl_2]:
+            for child in [child for child in self.children if child._text == self.lbl_2]:
                 if child.state == 'normal':
-                    child.text = self.lbl_1
+                    child._text = self.lbl_1
                     print('stop')
                     SmaRTLayout.app_start = False # возвращает значение аргументва в класс
 
@@ -124,18 +124,18 @@ class SmaRTLayout(GridLayout):
         self.lbl_1 = "Корсары 3"
         self.lbl_2 = "Выбранно : Корсары 3"
 
-        for child in [child for child in self.children if child.text == self.lbl_1 or child.text == self.lbl_2]:
+        for child in [child for child in self.children if child._text == self.lbl_1 or child._text == self.lbl_2]:
             if child.state == 'down' or child.state == 'normal':
                 pass
                 #child.text = self.lbl_2
 
-            for child in [child for child in self.children if child.text == self.lbl_1]:
+            for child in [child for child in self.children if child._text == self.lbl_1]:
                 if child.state == 'down':
-                    child.text = self.lbl_2
+                    child._text = self.lbl_2
 
-            for child in [child for child in self.children if child.text == self.lbl_2]:
+            for child in [child for child in self.children if child._text == self.lbl_2]:
                 if child.state == 'normal':
-                    child.text = self.lbl_1
+                    child._text = self.lbl_1
 
 
 

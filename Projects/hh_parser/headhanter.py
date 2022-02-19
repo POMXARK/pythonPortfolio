@@ -26,7 +26,7 @@ def extract_max_page():
     paginator = hh_soup.find_all("span", {'class': 'pager-item-not-in-short-range'})
 
     for page in paginator:
-        pages.append((int(page.find('a').text)))
+        pages.append((int(page.find('a')._text)))
 
     return pages[-1]
 
@@ -40,9 +40,9 @@ def extract_hh_jobs(last_page):
     soup = BeautifulSoup(result.text,'html.parser')
     results = soup.find_all('div',{'class': 'vacancy-serp-item'})
     for result in results:
-        title = result.find('a').text
+        title = result.find('a')._text
         print(title)
-        company = result.find('div', {'class':'vacancy-serp-item__meta-info-company'}).find('a').text
+        company = result.find('div', {'class':'vacancy-serp-item__meta-info-company'}).find('a')._text
         print(company)
     return jobs
 #paginator = hh_soup.find("span", {'class': 'bloko-button-group'})

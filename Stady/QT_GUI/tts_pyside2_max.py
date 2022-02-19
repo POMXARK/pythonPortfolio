@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
         self.sayButton.setEnabled(False)
         self.engine.setVoice(self.voices[self.voiceCombo.currentIndex()])
         self.engine.setVolume(float(self.volumeSlider.value()) / 100)
-        self.engine.say(self.text.text())
+        self.engine.say(self.text._text())
 
     def stateChanged(self, state):
         if (state == QTextToSpeech.State.Ready):
