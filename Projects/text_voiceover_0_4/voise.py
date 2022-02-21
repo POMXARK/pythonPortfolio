@@ -4,11 +4,10 @@ import random
 
 class BaseVoiceOptions:
 
-    def __init__(self, speakers: list = '', voice_file: str = '',voice_opt_file: str=''):
+    def __init__(self, speakers: list, voice_file: str,voice_opt_file: str):
         self._speakers = speakers
-        if voice_file != '':
-            _voice_name = open(voice_file)  # открыть файл
-            self._voice_name = _voice_name.read()  # прочитать
+        _voice_name = open(voice_file)  # открыть файл
+        self._voice_name = _voice_name.read()  # прочитать
         self._voice_opt_file = voice_opt_file
         self._set_opt()
 
@@ -76,23 +75,20 @@ class BaseVoiceOptions:
 
 
 class VoiceOptions(BaseVoiceOptions):
-    def __init__(self, min_speed: str = '', max_speed: str = '', min_volume: str = '', max_volume: str = '', speakers : list= [],
-                 voice_file: str = '', voice_opt_file: str = ''):
+    def __init__(self, min_speed: str, max_speed: str, min_volume: str, max_volume: str, speakers: list,
+                 voice_file: str, voice_opt_file: str):
 
         super().__init__(speakers, voice_file, voice_opt_file)
         self._tts = pyttsx3.init()  # Инициализировать голосовой движок.
-        if min_speed != '' and max_speed != '':
-            self._random_rate = random.uniform(float(self._opt_1[min_speed]),
-                                               float(self._opt_1[max_speed]))  # Скорость произношения
-            self._random_rate *= self._random_rate
-        if min_volume != '' and max_volume != '':
-            self._vol = random.uniform(float(self._opt_1[min_volume]),
-                                       float(self._opt_1[max_volume]))  # Громкость голоса
-            self._rate = self._tts.getProperty('rate')  # Скорость произношения
-            self._tts.setProperty('rate', self._rate + self._random_rate)
-
-            self._volume = self._tts.getProperty('volume')  # Громкость голоса
-            self._tts.setProperty('volume', self._volume + self._vol)
+        self._random_rate = random.uniform(float(self._opt_1[min_speed]),
+                                           float(self._opt_1[max_speed]))  # Скорость произношения
+        self._random_rate *= self._random_rate
+        self._vol = random.uniform(float(self._opt_1[min_volume]),
+                                   float(self._opt_1[max_volume]))  # Громкость голоса
+        self._rate = self._tts.getProperty('rate')  # Скорость произношения
+        self._tts.setProperty('rate', self._rate + self._random_rate)
+        self._volume = self._tts.getProperty('volume')  # Громкость голоса
+        self._tts.setProperty('volume', self._volume + self._vol)
         self._voices = self._tts.getProperty('voices')
         self._tts.setProperty('voice', self._voices[-1].id)
         self._tts.setProperty('voice', 'ru')

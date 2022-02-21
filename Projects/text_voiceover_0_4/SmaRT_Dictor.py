@@ -2,7 +2,7 @@ import edit_img as e
 from Projects.text_voiceover_0_3.Say import ConvertTextToVoice
 
 
-class RunApp:
+class RunApp():
     def __init__(self, speakers: list, voice_file: str, voice_opt_file: str, time_replay: str, img, pytesseract_config: str, lang: str,  min_speed: str, max_speed: str, min_volume: str, max_volume: str):
         num = 0
         while num < 10: #бесконечный цикл

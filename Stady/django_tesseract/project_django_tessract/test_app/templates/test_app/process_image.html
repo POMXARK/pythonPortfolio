@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+  <style>
+   .content {
+    text-align: center;
+   }
+  </style>
+<body>
+{% for key, value in  mydata_json.items %}
+    <div class="content">{{ value|linebreaks }}</div>
+{% endfor %}
+</body>
+</html>
