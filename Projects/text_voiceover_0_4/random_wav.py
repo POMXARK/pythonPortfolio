@@ -1,10 +1,9 @@
 from simpleaudio import WaveObject, stop_all
 import os
 import random
-from Projects.text_voiceover_0_3.say import set_opt
 import datetime
-timer = int(set_opt()['Время повтора'])  # время повтора реплики
-
+#timer = int(set_opt()['Время повтора'])  # время повтора реплики
+timer = 1
 def random_wav():
 
     global now

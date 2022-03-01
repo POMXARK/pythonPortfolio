@@ -3,13 +3,15 @@ from fuzzywuzzy import fuzz
 import pytesseract
 from torch import device as torch_device,package,set_num_threads
 from simpleaudio import WaveObject, stop_all
-from Projects.text_voiceover_0_3.voise import VoiceOptions
 from pydub import AudioSegment
 import random
 import simpleaudio as sa
 import os
 
 import cv2 as cv
+
+from Projects.text_voiceover_0_4.src.options import VoiceOptions
+
 
 def show(title, img, color=True):
     if color:
@@ -38,12 +40,14 @@ class ConvertTextToVoice(VoiceOptions):
 
         super().__init__(min_speed, max_speed, min_volume, max_volume, speakers, voice_file, voice_opt_file)
         self.speakers = speakers
-        self._text = pytesseract.image_to_string(img, config=pytesseract_config, lang=lang)  # распознание текста
+        ### self._text = pytesseract.image_to_string(img, config=pytesseract_config, lang=lang)  # распознание текста
         self._timer = int(self._opt_1[time_replay])  # время повтора реплики
         self._old_text = ''
-
+        self.img = img
+        self.pytesseract_config = pytesseract_config
 
     def choice_of_voice_engine(self):
+        self._text = pytesseract.image_to_string(self.img, config=self.pytesseract_config, lang='rus')  # распознание текста
         no_silero = self.find_voice_noy_silero()
         voise = self._voice_name
 
@@ -53,7 +57,8 @@ class ConvertTextToVoice(VoiceOptions):
 
         for silero_speaker in self.speakers:
             if voise == silero_speaker:
-                self.say_silero()
+                pass
+                ####self.say_silero()
 
     def _say(self):
 
@@ -71,10 +76,9 @@ class ConvertTextToVoice(VoiceOptions):
 
         try:
             text_raz = fuzz.ratio(self._text, self._old_text)
-        except NameError:
+        except :
             self._old_text = ' '
 
-        text_raz = fuzz.ratio(self._text, self._old_text)
 
         try:
             sec_raz = (max(old_sec, now_sec) - min(old_sec, now_sec))
@@ -165,3 +169,8 @@ class ConvertTextToVoice(VoiceOptions):
         sa.stop_all()
         wave_obj = sa.WaveObject.from_wave_file('out.wav')
         play_obj = wave_obj.play()
+
+
+
+        #path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'out.wav')
+        #os.remove(path)

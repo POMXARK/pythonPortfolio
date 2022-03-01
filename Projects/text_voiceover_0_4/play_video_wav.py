@@ -1,8 +1,7 @@
 from simpleaudio import WaveObject, stop_all
-from Projects.text_voiceover_0_3.say import show_img as s
 import pytesseract
 import rapidfuzz.fuzz
-
+import cv2 as cv
 
 def load_dict_from_file():
     f = open('dict.txt','r')
@@ -15,7 +14,7 @@ def load_dict_from_file():
 
 def play_wav():
     stop_all()  # остановить любой звук
-    img = s.cv.imread("tesseract_mask.png")
+    img = cv.imread("tesseract_mask.png")
 
     config = r'--oem 3  --psm 4 tessedit_char_whitelist=абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 
