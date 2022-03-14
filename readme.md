@@ -1,7 +1,7 @@
 <body>
 <div>
     <div>
-    <h1>1. Project - Разработанные put projects</h1>
+    <h1>1. Project - Разработанные pet-projects</h1>
     <li><a href="https://github.com/POMXARK/pythonPortfolio/tree/master/Projects/GUI_cv2">ПО для определения показателей cv2 (run dialog.py) </a> </li>
     <li><a href="https://github.com/POMXARK/pythonPortfolio/tree/master/Projects/text_voiceover_0_4">ПО для озвучивания наэкранного текста(run SmartDictor_ui.py)</a></li>
         </div>
