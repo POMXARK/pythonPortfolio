@@ -6,9 +6,15 @@
     <li><a href="https://github.com/POMXARK/pythonPortfolio/tree/master/Projects/text_voiceover_0_4">ПО для озвучивания наэкранного текста(run SmartDictor_ui.py)</a></li>
         </div>
     <div>
-    <div>
-    <video src="https://player.vimeo.com/video/687959273?h=a114326395" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></video>
-  </video>
+<h1>Примеры работы ПО (тест в игре)</h1>
+<li><a href="https://vimeo.com/687959273">Корсары_2_Sea_Dogs_Русская_озвучка_2021_Rus_Smart_Corsairs</a>
+</li>
+<li>
+<a href="https://vimeo.com/687959199">Корсары_2_Corsairs_Sea_Dogs_Тест_Голосовых_движков_Русская_озвучка_2021</a>
+</li>
+<li><a href="https://vimeo.com/687959124">Sea_Dogs_2_-_Адд-он_Возвращение_Морской_Легенды_Русская_озвучка_2021</a>
+</li>
+
 </div>
             <h1>2. Study - учебные тесты</h1>
     </div>
