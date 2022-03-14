@@ -6,7 +6,7 @@
     <li><a href="https://github.com/POMXARK/pythonPortfolio/tree/master/Projects/text_voiceover_0_4">ПО для озвучивания наэкранного текста(run SmartDictor_ui.py)</a></li>
         </div>
     <div>
-            <h1>2. Stady - учебные тесты</h1>
+            <h1>2. Study - учебные тесты</h1>
     </div>
     <div>
         <h2>Используемые библиотеки</h2>
