@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Stady/django-helloworld" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Stady/fastapi-django-combo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Study/django-helloworld" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Study/fastapi-django-combo" vcs="Git" />
   </component>
 </project>
