@@ -7,8 +7,8 @@
         </div>
     <div>
     <div>
-    <iframe src="https://player.vimeo.com/video/687959273?h=a114326395" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
+    <video src="https://player.vimeo.com/video/687959273?h=a114326395" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></video>
+  </video>
 </div>
             <h1>2. Study - учебные тесты</h1>
     </div>
@@ -35,4 +35,3 @@
 
 </div>
 </body>
-</html>
